@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>800</width><height>600</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mon Application</string>
+  </property>
+
+  <widget class="QScrollArea" name="centralwidget">
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+
+     <!-- Flux vidéo -->
+     <item>
+      <widget class="QLabel" name="videoLabel">
+       <property name="minimumSize"><size><width>320</width><height>240</height></size></property>
+       <property name="text"><string>Flux Vidéo</string></property>
+       <property name="alignment"><set>Qt::AlignCenter</set></property>
+      </widget>
+     </item>
+
+     <!-- Commandes texte -->
+     <item>
+      <widget class="QLineEdit" name="messageLineEdit">
+       <property name="placeholderText"><string>Entrez votre message ici</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sendButton">
+       <property name="text"><string>Envoyer Message</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="messagesTextEdit">
+       <property name="readOnly"><bool>true</bool></property>
+      </widget>
+     </item>
+
+     <!-- Mouvement -->
+     <item>
+      <widget class="QLineEdit" name="commandLineEdit">
+       <property name="placeholderText"><string>Entrez votre commande de mouvement ici</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="moveButton">
+       <property name="text"><string>Envoyer Commande de Mouvement</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="commandsTextEdit">
+       <property name="readOnly"><bool>true</bool></property>
+      </widget>
+     </item>
+
+     <!-- Données -->
+     <item>
+      <widget class="QPushButton" name="fetchDataButton">
+       <property name="text"><string>Récupérer Données</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="captureScreenButton">
+       <property name="text"><string>Capturer Écran</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="measurementsTextEdit">
+       <property name="readOnly"><bool>true</bool></property>
+      </widget>
+     </item>
+
+     <!-- Commandes Moteur -->
+     <item>
+      <widget class="QLabel" name="commandLabel">
+       <property name="text"><string>Q - Gauche, X - Stop, D - Droite, S - Reculer, A - Tourner, W - ↙, C - ↘</string></property>
+      </widget>
+     </item>
+
+     <!-- Servo UNIQUE -->
+     <item>
+      <widget class="QGroupBox" name="servoGroup">
+       <property name="title"><string>Contrôle du Servomoteur</string></property>
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QSlider" name="servoSlider">
+          <property name="orientation"><enum>Qt::Horizontal</enum></property>
+          <property name="minimum"><number>0</number></property>
+          <property name="maximum"><number>180</number></property>
+          <property name="value"><number>90</number></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="servoAngleLabel">
+          <property name="text"><string>Angle: 90°</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="sendServoButton">
+          <property name="text"><string>Envoyer angle au servomoteur</string></property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+
+    </layout>
+   </widget>
+  </widget>
+
+  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
